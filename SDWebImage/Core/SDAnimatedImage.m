@@ -44,7 +44,7 @@ static CGFloat SDImageScaleFromPath(NSString *string) {
 
 #pragma mark - UIImage override method
 + (instancetype)imageNamed:(NSString *)name {
-#if __has_include(<UIKit/UITraitCollection.h>)
+#if SD_UIKIT
     return [self imageNamed:name inBundle:nil compatibleWithTraitCollection:nil];
 #else
     return [self imageNamed:name inBundle:nil];
